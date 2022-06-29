@@ -1,4 +1,12 @@
 {
-  "item.oretools.coal_pickaxe": "Coal Pickaxe"
+  "item.oretools.coal_pickaxe": "Coal Pickaxe",
+  "item.oretools.coal_shovel": "Coal Shovel",
+  "item.oretools.coal_sword": "Coal Sword",
+  "item.oretools.coal_axe": "Coal Axe",
+  "item.oretools.coal_hoe": "Coal Hoe",
+  "item.oretools.coal_helmet": "Coal Helmet",
+  "item.oretools.coal_chestplate": "Coal Chestplate",
+  "item.oretools.coal_leggings": "Coal Leggings",
+  "item.oretools.coal_boots": "Coal Boots",
 
 }
