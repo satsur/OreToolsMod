@@ -2,6 +2,7 @@ package me.satsur.oretools.item;
 
 import me.satsur.oretools.ModArmorMaterials;
 import me.satsur.oretools.OreTools;
+import me.satsur.oretools.item.custom.HeatedDiamondItem;
 import me.satsur.oretools.item.custom.ModArmorItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -38,6 +39,14 @@ public class ModItems {
     public static final RegistryObject<Item> COAL_BOOTS = ITEMS.register("coal_boots", () ->
             new ArmorItem(ModArmorMaterials.COAL, EquipmentSlot.FEET,
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+
+    //MISC
+    public static final RegistryObject<Item> HEATED_DIAMOND = ITEMS.register("heated_diamond", () ->
+            new HeatedDiamondItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)
+                    .fireResistant()
+                    .durability(50)
+                    .defaultDurability(50)
+                    .setNoRepair()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
