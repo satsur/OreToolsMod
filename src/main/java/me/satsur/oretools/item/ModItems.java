@@ -2,6 +2,7 @@ package me.satsur.oretools.item;
 
 import me.satsur.oretools.ModArmorMaterials;
 import me.satsur.oretools.OreTools;
+import me.satsur.oretools.item.custom.BlowtorchItem;
 import me.satsur.oretools.item.custom.HeatedDiamondItem;
 import me.satsur.oretools.item.custom.ModArmorItem;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -47,6 +48,11 @@ public class ModItems {
                     .durability(50)
                     .defaultDurability(50)
                     .setNoRepair()));
+
+    public static final RegistryObject<Item> BLOWTORCH = ITEMS.register("blowtorch", () ->
+        new BlowtorchItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)
+                .stacksTo(1)
+        ));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

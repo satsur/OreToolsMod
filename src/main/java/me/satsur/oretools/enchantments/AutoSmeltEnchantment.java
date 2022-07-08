@@ -28,6 +28,7 @@ import java.util.UUID;
 @Mod.EventBusSubscriber(modid = "oretools")
 public class AutoSmeltEnchantment extends Enchantment {
 
+    //Modified block drops
     private static Map<Block, Item> AUTO_SMELTABLE_BlOCKS =
             new ImmutableMap.Builder<Block, Item>()
                     .put(Blocks.IRON_ORE, Items.IRON_INGOT)
@@ -51,13 +52,14 @@ public class AutoSmeltEnchantment extends Enchantment {
             BlockPos blockPos = event.getPos();
             Block block = event.getState().getBlock();
             ItemStack tool = player.getMainHandItem();
-            player.sendMessage(new TextComponent("Has Enchantment: " + EnchantmentHelper.getEnchantments(tool)), UUID.randomUUID());
             if (EnchantmentHelper.getEnchantments(tool).get(ModEnchantments.AUTO_SMELT.get()) != null && AUTO_SMELTABLE_BlOCKS.containsKey(block)) {
                 ItemEntity smelted_item = new ItemEntity(level,
                         blockPos.getX(), blockPos.getY(), blockPos.getZ(),
                         new ItemStack(AUTO_SMELTABLE_BlOCKS.get(block), 1)
                         );
+                //Destroy block and don't drop normal item and prevent normal drops
                 level.destroyBlock(blockPos, false);
+                //Drop new ItemStack of the smelted ingot/item
                 level.addFreshEntity(smelted_item);
             }
 
