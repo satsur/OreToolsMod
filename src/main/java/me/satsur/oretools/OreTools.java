@@ -1,6 +1,7 @@
 package me.satsur.oretools;
 
 import me.satsur.oretools.block.ModBlocks;
+import me.satsur.oretools.enchantments.ModEnchantments;
 import me.satsur.oretools.item.ModItems;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,6 +28,7 @@ public class OreTools {
         // Register the DeferredRegisters for items and blocks
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModEnchantments.register(eventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
