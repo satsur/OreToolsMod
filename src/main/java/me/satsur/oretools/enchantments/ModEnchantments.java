@@ -15,6 +15,9 @@ public class ModEnchantments {
     public static RegistryObject<Enchantment> AUTO_SMELT = ENCHANTMENTS.register("auto_smelt", () ->
             new AutoSmeltEnchantment(Enchantment.Rarity.COMMON, EnchantmentCategory.DIGGER, EquipmentSlot.MAINHAND));
 
+    public static RegistryObject<Enchantment> COAL_STRIKER = ENCHANTMENTS.register("coal_striker", () ->
+        new CoalStrikerEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
+
 
     public static void register(IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);
